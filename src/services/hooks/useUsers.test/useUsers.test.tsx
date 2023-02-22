@@ -13,7 +13,7 @@ describe('useUsers', () => {
       wrapper: createQueryProviderWrapper(),
     })
 
-    await waitFor(() => result.current.isSuccess, { timeout: 10000 })
+    await waitFor(() => result.current.isSuccess)
 
     const user = result.current.data?.[0]
 
