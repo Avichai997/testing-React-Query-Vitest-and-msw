@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "restoreTerminals.terminals": [
+      {
+        "splitTerminals": [
+          {
+            "name": "client",
+            "commands": ["npm run dev"]
+          },
+          {
+            "name": "Vitest",
+            "commands": ["npm run test"]
+          }
+        ]
+      }
+    ],
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ]
+  }
+}

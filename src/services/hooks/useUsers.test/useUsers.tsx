@@ -1,18 +1,12 @@
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
+import { axiosClient } from '@/services/axiosClient'
 import { IUser } from '@/services/hooks/useUsers.test/IUser'
 
 export const getUsers = async () => {
-  const response = await fetch('https://api.github.com/users', {
-    headers: {
-      // Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-      Authorization: `Bearer ${import.meta.env.VITE_GITHUB_API_KEY}`,
-    },
-  })
+  const { data: users } = await axiosClient.get<IUser[]>('/users')
 
-  const resData = await response.json()
-
-  return resData
+  return users
 }
 
 export const useUsers = (
